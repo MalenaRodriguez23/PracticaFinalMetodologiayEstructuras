@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="434.0" prefWidth="686.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codigoFX.javafx.conquista.ParameterController">
+    <children>
+        <TabPane layoutX="170.0" layoutY="78.0" prefHeight="244.0" prefWidth="271.0" tabClosingPolicy="UNAVAILABLE">
+            <tabs>
+                <Tab text="Usuario">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label layoutX="27.0" layoutY="14.0" text="Introduce tu nombre" />
+                                <TextField fx:id="textfieldNombre" layoutX="14.0" layoutY="41.0" />
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+                <Tab text="Personaje">
+                    <content>
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                            <children>
+                                <Label layoutX="7.0" layoutY="14.0" text="Equipo Ciencias o equipo Letras" />
+                                <TextField fx:id="textfieldPersonaje" layoutX="17.0" layoutY="41.0" />
+                            </children></AnchorPane>
+                    </content>
+                </Tab>
+            </tabs>
+        </TabPane>
+        <Label layoutX="256.0" layoutY="31.0" text="Menú de características" />
+        <HBox layoutX="183.0" layoutY="344.0" prefHeight="65.0" prefWidth="239.0">
+            <children>
+                <Button mnemonicParsing="false" onAction="#onBotonReiniciarClick" text="Reiniciar" />
+                <Button mnemonicParsing="false" onAction="#onBotonCerrarClick" text="Cerrar" />
+                <Button mnemonicParsing="false" onAction="#onBotonContinuarClick" text="Continuar" />
+            <Button mnemonicParsing="false" onAction="#onBotonGuardarClick" text="Guardar" />
+            </children>
+        </HBox>
+    </children>
+</AnchorPane>

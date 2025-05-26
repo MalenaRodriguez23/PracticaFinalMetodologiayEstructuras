@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.geometry.*?>
+
+<HBox alignment="center" spacing="20" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="codigoFX.javafx.conquista.TableroController" style="-fx-background-color: #f5f5f5;">
+
+    <!-- Tablero de Juego (Inicialmente oculto) -->
+    <VBox spacing="10" style="-fx-padding: 10;">
+        <VBox fx:id="configuracionPanel" spacing="10" visible="true" managed="true" style="-fx-background-color: #e8e8e8; -fx-border-color: #ccc; -fx-border-width: 1; -fx-padding: 15;">
+            <Label prefHeight="47.0" prefWidth="214.0" text="    Configura el Tamaño del Tablero" style="-fx-font-weight: bold; -fx-font-size: 14px;"/>
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <Label text="     Filas:" style="-fx-font-size: 13px;"/>
+                <TextField fx:id="filasInput" prefHeight="26.0" prefWidth="67.0" promptText="Ingresa filas" style="-fx-font-size: 13px;"/>
+                <Label text="Columnas:" style="-fx-font-size: 13px;"/>
+                <TextField fx:id="columnasInput" prefHeight="17.0" prefWidth="60.0" promptText="Ingresa columnas" style="-fx-font-size: 13px;"/>
+            </HBox>
+            <Button onAction="#crearTablero" text="Crear Tablero" style="-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-font-weight: bold;"/>
+        </VBox>
+
+        <GridPane fx:id="gridPane" hgap="5" vgap="5" visible="false" managed="false" style="-fx-background-color: #f9f9f9; -fx-padding: 5;"/>
+    </VBox>
+
+    <!-- Panel derecho con menú de opciones y área de logs -->
+    <VBox spacing="15" style="-fx-padding: 10;">
+        <!-- Menú de opciones (Inicialmente oculto) -->
+        <VBox fx:id="menuOpcionesVBox" spacing="10" visible="false" managed="false" style="-fx-background-color: #e8f4f8; -fx-border-color: #aaccee; -fx-border-width: 1; -fx-padding: 15; -fx-background-radius: 5; -fx-border-radius: 5;">
+            <Label text="Opciones del Personaje" style="-fx-font-weight: bold; -fx-text-fill: #2a5885;"/>
+            <Button text="Mover" onAction="#moverPersonajeAccion" style="-fx-base: #a3c2f7; -fx-font-weight: bold;"/>
+            <Button text="Atacar" onAction="#atacarPersonajeAccion" style="-fx-base: #f7a3a3; -fx-font-weight: bold;"/>
+            <Button text="Usar Habilidad" onAction="#habilidadEspecialPersonaje" style="-fx-base: #a3f7ba; -fx-font-weight: bold;"/>
+            <Button text="Usar Habilidad General" onAction="#habilidadGeneralPersonaje" style="-fx-base: #f7f0a3; -fx-font-weight: bold;"/>
+            <Button layoutX="131.0" layoutY="344.0" mnemonicParsing="false" onAction="#onBotonGuardarClick" text="Guardar" />
+        </VBox>
+
+        <!-- Área de Logs -->
+        <VBox style="-fx-border-color: #ccc; -fx-border-width: 1; -fx-background-color: #f0f0f0; -fx-border-radius: 5; -fx-padding: 5;">
+            <Label text="Registro de Batalla:" style="-fx-font-weight: bold; -fx-text-fill: #333;"/>
+            <TextArea fx:id="logTextArea" editable="false" wrapText="true"
+                      prefHeight="200" prefWidth="250"
+                      style="-fx-font-family: 'Consolas'; -fx-font-size: 12px; -fx-control-inner-background: #2a2a2a; -fx-text-fill: #e0e0e0;"/>
+        </VBox>
+    </VBox>
+
+</HBox>
